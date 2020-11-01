@@ -8,6 +8,7 @@ public class Person {
     private String name;
     private String age;
     private String gender;
+    private Phone phone;
 
     public String getName() {
         return name;
@@ -37,10 +38,19 @@ public class Person {
         super();
     }
 
-    public Person(String name, String age, String gender) {
+    public Phone getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Phone phone) {
+        this.phone = phone;
+    }
+
+    public Person(String name, String age, String gender, Phone phone) {
         this.name = name;
         this.age = age;
         this.gender = gender;
+        this.phone = phone;
     }
 
     @Override
@@ -49,6 +59,7 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age='" + age + '\'' +
                 ", gender='" + gender + '\'' +
+                ", phone=" + phone +
                 '}';
     }
 }

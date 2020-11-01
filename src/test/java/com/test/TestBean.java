@@ -14,7 +14,9 @@ public class TestBean {
     @Test
     public void testBean(){
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-bean.xml");
-        Person person = (Person)context.getBean("person");
-        System.out.println(person);
+        Person person1 = (Person)context.getBean("person1");
+        Person person2 = (Person)context.getBean("person2");
+        System.out.println(person1);
+        System.out.println(person2);
     }
 }

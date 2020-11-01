@@ -3,9 +3,29 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="person" class="com.atguigu.spring.bean.Person">
+    <bean id="person1" class="com.atguigu.spring.bean.Person">
         <property name="name" value="lisi"></property>
         <property name="age" value="22"></property>
         <property name="gender" value="男"></property>
+        <property name="phone" ref="phone1"></property>
     </bean>
+
+    <bean id="phone1" class="com.atguigu.spring.bean.Phone">
+        <property name="name" value="华为"></property>
+        <property name="model" value="Por 30"></property>
+
+    </bean>
+
+    <bean id="person2" class="com.atguigu.spring.bean.Person">
+        <property name="name" value="lisi"></property>
+        <property name="age" value="22"></property>
+        <property name="gender" value="男"></property>
+        <property name="phone" >
+            <bean class="com.atguigu.spring.bean.Phone">
+                <property name="name" value="苹果"></property>
+                <property name="model" value="Iphone 6"></property>
+            </bean>
+        </property>
+    </bean>
+
 </beans>
