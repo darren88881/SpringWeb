@@ -15,5 +15,7 @@
 <h1>SUCCESS</h1>
 
 <h1>转发带的参数：${requestScope.name}</h1>
+<h1>转发带的参数：${sessionScope.session}</h1>
+<h1>转发带的参数：${applicationScope.Application}</h1>
 </body>
 </html>
