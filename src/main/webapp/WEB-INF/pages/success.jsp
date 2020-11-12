@@ -13,5 +13,7 @@
 <body>
 
 <h1>SUCCESS</h1>
+
+<h1>转发带的参数：${requestScope.name}</h1>
 </body>
 </html>
