@@ -6,16 +6,29 @@
 <script type="text/javascript" src="script/jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        $("#a").click(function(){
-            var url = this.attr("href");
+        $("#a1").click(function(){
+            var url = $(this).attr("href");
             $.ajax({
                 url:url,
                 type:"GET",
                 success:function(data){
                     console.log(data);
                 }
-
-
+            });
+            return false;
+        });
+        $("#a2").click(function(){
+            var url = $(this).attr("href");
+            var jsstu = {"name":"liming","age":"55","height":"190"};
+            var stu = JSON.stringify(jsstu);
+            $.ajax({
+                url:url,
+                type: "POST",
+                data: stu,
+                contentType: "application/json;charset=UTF-8",
+                success:function(data){
+                    console.log(data);
+                }
             });
             return false;
         });
@@ -48,6 +61,7 @@
 </form>
 
 <h1>--------Ajax请求----------</h1>
-<a id ="a" href="response/postAjax">Ajax请求</a>
+<a id ="a1" href="response/getAjax">Ajax请求响应json</a>
+<a id ="a2" href="response/sendAjax">发送json请求</a>
 </body>
 </html>

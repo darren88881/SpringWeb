@@ -2,10 +2,7 @@ package com.atguigu.spring.mvc;
 
 import com.atguigu.spring.bean.Student;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author darren
@@ -38,10 +35,15 @@ public class BookHandler {
         System.out.println("查询"+id+"本图书");
         return "success";
     }
-    @RequestMapping(value = "/response/postAjax")
+    @RequestMapping(value = "/response/getAjax")
     @ResponseBody
     public Student getAjax(){
         Student stu = new Student("张三","22","180");
         return stu;
+    }
+    @RequestMapping(value = "/response/sendAjax")
+    public String sendAjax(@RequestBody Student stu){
+        System.out.println(stu);
+        return "success";
     }
 }
